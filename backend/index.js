@@ -9,6 +9,7 @@ const app = express();
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
 const mongoURI = process.env.MONGO_URI || 'mongodb+srv://skshaafiya:cPvEUgHbdgqQuQ80@mern-vercell.ac0dl.mongodb.net/?retryWrites=true&w=majority&appName=mern-vercell';
 
+
 // Middleware
 app.use(cors({
   origin: "*",
