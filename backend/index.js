@@ -12,11 +12,12 @@ const mongoURI = process.env.MONGO_URI || 'mongodb+srv://skshaafiya:cPvEUgHbdgqQ
 
 // Middleware
 app.use(cors({
-  origin: 'https://mern-vercell-tp4t-nine.vercel.app',  // Explicit URL for better control
+  origin: '*',
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow headers like Content-Type and Authorization
-  credentials: true,  // Allows cookies if needed
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
+
 
 app.use(bodyParser.json());
 
@@ -46,12 +47,13 @@ app.options('*', (req, res) => {
 });
 
 // Root Route
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send('Welcome to my API!');
-});
+});*/
 
 // Registration Route
 app.post('/register', async (req, res) => {
+    console.log('Received registration data:', req.body);  // Log the received data
     console.log('Received request to register:', req.body); // Add logging here
   try {
     const { name, phone, age, email, pin, city, sub_area, password } = req.body;
