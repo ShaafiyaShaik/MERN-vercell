@@ -43,6 +43,7 @@ app.get('/', (req, res) => {
 
 // Registration Route
 app.post('/register', async (req, res) => {
+    console.log('Received request to register:', req.body); // Add logging here
   try {
     const { name, phone, age, email, pin, city, sub_area, password } = req.body;
 
