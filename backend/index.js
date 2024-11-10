@@ -12,9 +12,10 @@ const mongoURI = process.env.MONGO_URI || 'mongodb+srv://skshaafiya:cPvEUgHbdgqQ
 
 // Middleware
 app.use(cors({
-  origin: ["https://mern-vercell-tp4t-nine.vercel.app"],
-  methods: ["GET", "POST", "OPTIONS"],
-  credentials: true // Set to true if sending credentials like cookies; otherwise, false
+  origin: 'https://mern-vercell-tp4t-nine.vercel.app',  // Explicit URL for better control
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow headers like Content-Type and Authorization
+  credentials: true,  // Allows cookies if needed
 }));
 
 app.use(bodyParser.json());
@@ -36,6 +37,13 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 const User = mongoose.model('User', userSchema);
+
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');  // Allow all origins or specify yours
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Requested-With, Accept, Authorization');
+  res.sendStatus(200);  // Return status 200 for preflight
+});
 
 // Root Route
 app.get('/', (req, res) => {
