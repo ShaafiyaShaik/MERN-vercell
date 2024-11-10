@@ -6,7 +6,13 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 // Middleware
-app.use(cors()); // Allow cross-origin requests from frontend
+app.use(cors(
+  {
+    origin:["https://deploy-mern-1whq.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+  }
+)); // Allow cross-origin requests from frontend
 app.use(bodyParser.json());
 
 // MongoDB Atlas connection string
