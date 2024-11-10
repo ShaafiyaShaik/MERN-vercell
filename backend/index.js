@@ -43,6 +43,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to my API!');
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to my API!');
+});
+
 // Route for Registration
 app.post('/register', async (req, res) => {
     console.log('Request received:', req.body); // Log the incoming request data
