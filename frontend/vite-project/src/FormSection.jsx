@@ -20,7 +20,8 @@ function FormSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
-  
+
+    
     try {
       const response = await fetch('https://mern-vercell-api.vercel.app/register', {
         method: 'POST',
