@@ -17,7 +17,7 @@ function Login() {
     e.preventDefault();
 
     
-    const response = await fetch('https://mern-vercell.vercel.app/login', {
+    const response = await fetch('https://mern-vercell-api.vercel.app/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginData),
