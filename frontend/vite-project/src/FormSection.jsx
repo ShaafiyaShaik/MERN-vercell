@@ -12,16 +12,13 @@ function FormSection() {
     password: '',
   });
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    
+    e.preventDefault(); 
     try {
       const response = await fetch('https://mern-vercell-api.vercel.app/register', {
         method: 'POST',
