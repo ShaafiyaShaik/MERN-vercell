@@ -39,6 +39,9 @@ const User = mongoose.model('User', userSchema);
 
 // Secret key for JWT (Store this securely)
 const JWT_SECRET = 'your_jwt_secret_key';
+app.get('/', (req, res) => {
+  res.send('Welcome to my API!');
+});
 
 // Route for Registration
 app.post('/register', async (req, res) => {
