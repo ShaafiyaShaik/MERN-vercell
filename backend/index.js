@@ -12,7 +12,7 @@ const mongoURI = process.env.MONGO_URI || 'mongodb+srv://skshaafiya:cPvEUgHbdgqQ
 
 // Middleware
 app.use(cors({
-  origin: ["https://mern-vercell.vercel.app"],
+  origin: ["https://mern-vercell-tp4t-nine.vercel.app"],
   methods: ["POST", "GET"],
   credentials: false // Set to true only if necessary
 }));
