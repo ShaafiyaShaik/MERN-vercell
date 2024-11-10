@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ["https://mern-vercell-tp4t.vercel.app/"],
+  origin: ["https://mern-vercell-tp4t.vercel.app"],
   methods: ["POST", "GET"],
   credentials: true
 }));
